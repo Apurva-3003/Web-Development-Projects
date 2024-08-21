@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Letters</title>
+</head>
+
+<body>
+  <!-- When the get request is sent, numOfLetters is not defined, 
+  so the if statement is run, when the post request is sent, the else statement runs -->
+  <% if(locals.numOfLetters){ %>
+    <h1>There are <%= numOfLetters %> letters in your name</h1>
+  <% }else{ %>
+    <h1>Enter your name below</h1>
+  <% } %>
+  <form action="/submit" method="POST">
+    <input type="text" name="fName" placeholder="First name">
+    <input type="text" name="lName" placeholder="Last name">
+    <input type="submit" value="OK">
+  </form>
+</body>
+
+</html>
